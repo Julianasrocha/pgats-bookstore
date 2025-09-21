@@ -6,8 +6,8 @@ This project is a simple bookstore API built with Node.js. It provides both REST
 - REST API (Express):
   - List all books (`GET /books`)
   - Create a new book (`POST /books`)
-  - User registration (`POST /auth/register`)
-  - User login (`POST /auth/login`)
+  - User registration (`POST /users/register`)
+  - User login (`POST /users/login`)
   - Swagger UI documentation (`/api-docs`)
 - GraphQL API (Apollo Server):
   - Query all books
@@ -30,7 +30,7 @@ npm install
 
 ### Running the Server
 ```sh
-npm start
+npm run start:all
 ```
 
 ### Running Tests
@@ -48,7 +48,7 @@ npm test
 - `test` - Automated tests
 
 ## Authentication
-Most endpoints require a valid JWT token. Use the `/auth/register` endpoint to create a user, then `/auth/login` to obtain a token. For GraphQL, use the `register` and `login` mutations.
+Most endpoints require a valid JWT token. Use the `/users/register` endpoint to create a user, then `/users/login` to obtain a token. For GraphQL, use the `register` and `login` mutations.
 
 ## API Documentation
 REST API documentation is available via Swagger UI at [`/api-docs`](http://localhost:3000/api-docs) when the server is running.

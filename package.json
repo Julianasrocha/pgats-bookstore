@@ -4,6 +4,7 @@
     "description": "Simple Bookstore API with REST and GraphQL, JWT authentication, and automated tests.",
     "main": "src/index.js",
     "scripts": {
+        "start:all": "concurrently \"npm run start-rest\" \"npm run start-graphql\"",
         "start-rest": "node src/rest/server.js",
         "start-graphql": "node src/graphql/server.js",
         "test": "mocha --recursive --exit",
@@ -22,18 +23,19 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "apollo-server-express": "^3.12.0",
         "bcryptjs": "^2.4.3",
         "express": "^4.18.2",
         "express-jwt": "^7.7.8",
         "graphql": "^16.8.1",
         "jsonwebtoken": "^9.0.2",
-        "apollo-server-express": "^3.12.0",
-        "swagger-ui-express": "^4.6.3",
-        "swagger-jsdoc": "^6.2.8"
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^4.6.3"
     },
     "devDependencies": {
         "chai": "4.5.0",
         "chai-exclude": "^2.1.1",
+        "concurrently": "^9.2.1",
         "dotenv": "^17.2.2",
         "jsonwebtoken": "^9.0.2",
         "mocha": "^11.7.1",
