@@ -24,13 +24,13 @@ jobs:
       
       - name: Run API tests via Controller
         run: npm run test-rest-controller
-      
+
       - name: Start API Rest 
         run: npm run start-rest &
-
+      
       - name: Wait for API to be ready
-        run: npx wait-on http://localhost:3000/
-
+        run: sleep 8
+      
       - name: Create .env
         run: |
           echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
