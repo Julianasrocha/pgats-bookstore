@@ -27,6 +27,9 @@ jobs:
 
       - name: Start API Rest 
         run: npm run start-rest &
+
+      - name: Start API GraphQL 
+        run: npm run start-graphql &
       
       - name: Wait for API to be ready
         run: sleep 8
@@ -34,6 +37,10 @@ jobs:
       - name: Create .env
         run: |
           echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
+          echo "BASE_URL_GRAPHQL=${{ secrets.BASE_URL_GRAPHQL }}" >> .env
       
       - name: Run Rest API tests via HTTP
         run: npm run test-rest-external
+      
+      - name: Run GraphQL API tests via HTTP
+        run: npm run test-graphql-external

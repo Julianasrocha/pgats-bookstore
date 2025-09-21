@@ -5,9 +5,11 @@
     "main": "src/index.js",
     "scripts": {
         "start-rest": "node src/rest/server.js",
+        "start-graphql": "node src/graphql/server.js",
         "test": "mocha --recursive --exit",
         "test-rest-controller": "mocha test/rest/controller/**/*.test.js --timeout 10000 --reporter mochawesome",
-        "test-rest-external": "mocha test/rest/external/**/*.test.js --timeout 10000 --reporter mochawesome"
+        "test-rest-external": "mocha test/rest/external/**/*.test.js --timeout 10000 --reporter mochawesome",
+        "test-graphql-external": "mocha test/graphql/external/**/*.test.js --timeout 10000 --reporter mochawesome"
     },
     "keywords": [
         "bookstore",
