@@ -18,5 +18,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm test
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run API tests via Controller
+        run: npm run test-rest-controller
+      
+      - name: Start API Rest 
+        run: npm run start-rest &
+
+      - name: Wait until APIs are up
+        run: sleep 8
+
+      - name: Criar .env
+        run: |
+          echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
+      
+      - name: Run Rest API tests via HTTP
+        run: npm run test-rest-external

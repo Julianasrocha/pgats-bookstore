@@ -1,31 +1,42 @@
 {
-  "name": "pgats-bookstore",
-  "version": "1.0.0",
-  "description": "Simple Bookstore API with REST and GraphQL, JWT authentication, and automated tests.",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "mocha --recursive --exit"
-  },
-  "keywords": ["bookstore", "api", "nodejs", "express", "graphql", "jwt"],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.18.2",
-    "express-jwt": "^7.7.8",
-    "graphql": "^16.8.1",
-    "jsonwebtoken": "^9.0.2",
-    "apollo-server-express": "^3.12.0",
-  "swagger-ui-express": "^4.6.3",
-    "swagger-jsdoc": "^6.2.8"
-  },
-  "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.2.0",
-    "nodemon": "^3.0.3",
-    "sinon": "^17.0.1",
-    "supertest": "^6.3.4"
-  }
+    "name": "pgats-bookstore",
+    "version": "1.0.0",
+    "description": "Simple Bookstore API with REST and GraphQL, JWT authentication, and automated tests.",
+    "main": "src/index.js",
+    "scripts": {
+        "start-rest": "node src/rest/server.js",
+        "test": "mocha --recursive --exit",
+        "test-rest-controller": "mocha test/rest/controller/**/*.test.js --timeout 10000 --reporter mochawesome",
+        "test-rest-external": "mocha test/rest/external/**/*.test.js --timeout 10000 --reporter mochawesome"
+    },
+    "keywords": [
+        "bookstore",
+        "api",
+        "nodejs",
+        "express",
+        "graphql",
+        "jwt"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "express": "^4.18.2",
+        "express-jwt": "^7.7.8",
+        "graphql": "^16.8.1",
+        "jsonwebtoken": "^9.0.2",
+        "apollo-server-express": "^3.12.0",
+        "swagger-ui-express": "^4.6.3",
+        "swagger-jsdoc": "^6.2.8"
+    },
+    "devDependencies": {
+        "chai": "4.5.0",
+        "chai-exclude": "^2.1.1",
+        "dotenv": "^17.2.2",
+        "jsonwebtoken": "^9.0.2",
+        "mocha": "^11.7.1",
+        "mochawesome": "^7.1.3",
+        "sinon": "^21.0.0",
+        "supertest": "^7.1.4"
+    }
 }
