@@ -6,7 +6,7 @@ use(chaiExclude)
 
 require('dotenv').config();
 
-describe('Book Controller', () => {
+describe('External - Book Controller', () => {
     before(async () => {
         const res = await req(process.env.BASE_URL_REST)
             .post('/users/login')
