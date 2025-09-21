@@ -28,10 +28,10 @@ jobs:
       - name: Start API Rest 
         run: npm run start-rest &
 
-      - name: Wait until APIs are up
-        run: sleep 8
+      - name: Wait for API to be ready
+        run: npx wait-on http://localhost:3000/health
 
-      - name: Criar .env
+      - name: Create .env
         run: |
           echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
       
