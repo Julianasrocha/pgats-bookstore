@@ -22,10 +22,16 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Start APIs Rest & GraphQL
-        run: npm run start:all
+      - name: Run API tests via Controller
+        run: npm run test-rest-controller
 
-      - name: Wait for APIs to be ready
+      - name: Start API Rest 
+        run: npm run start-rest &
+
+      - name: Start API GraphQL 
+        run: npm run start-graphql &
+      
+      - name: Wait for API to be ready
         run: sleep 8
       
       - name: Create .env
@@ -37,4 +43,4 @@ jobs:
         run: npm run test-rest-external
       
       - name: Run GraphQL API tests via HTTP
-        run: npm test
+        run: npm run test-graphql-external
